@@ -159,7 +159,7 @@ const PersonalAI = () => {
             <TiltCard maxTilt={15} scale={1.05} speed={500} glare={true}>
               <figure className="aspect-square bg-gradient-to-br from-[#2D2D3A]/20 to-transparent rounded-3xl border border-[#2D2D3A]/20 backdrop-blur-sm overflow-hidden">
                 <img 
-                  src="/src/assets/ruyaa-agent-power.png"
+                  src="/ruyaa-agent-power.png"
                   alt="Ruyaa AI Agent showcasing intelligent automation capabilities including appointment scheduling, data analysis, and seamless integration across multiple business functions"
                   className="w-full h-full object-cover"
                   loading="lazy"

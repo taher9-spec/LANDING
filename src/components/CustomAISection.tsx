@@ -21,7 +21,7 @@ const CustomAISection = () => {
             <TiltCard maxTilt={20} scale={1.08} speed={600} glare={true}>
               <figure className="aspect-square bg-gradient-to-br from-[#2D2D3A]/20 to-transparent rounded-3xl border border-[#2D2D3A]/20 backdrop-blur-sm overflow-hidden">
                 <img 
-                  src="/src/assets/ruyaa-customizable-agent.png"
+                  src="/ruyaa-customizable-agent.png"
                   alt="Ruyaa's customizable AI agent system showcasing intelligent automation capabilities including appointment scheduling, data analysis, and seamless integration across multiple business functions"
                   className="w-full h-full object-cover"
                   loading="lazy"
