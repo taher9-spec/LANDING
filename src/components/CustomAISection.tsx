@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Calendar, MessageCircle, Settings, Users, Zap } from 'lucide-react';
+import { Calendar, MessageCircle, Settings, Users } from 'lucide-react';
 import TiltCard from './TiltCard';
 
 const CustomAISection = () => {

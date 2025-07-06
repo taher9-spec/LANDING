@@ -37,9 +37,10 @@ const PersonalAI = () => {
     switch (name) {
       case 'fullName':
         return value.trim() ? '' : 'Full name is required';
-      case 'email':
+      case 'email': {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(value) ? '' : 'Please enter a valid email address';
+      }
       case 'message':
         return value.trim() ? '' : 'Message is required';
       default:

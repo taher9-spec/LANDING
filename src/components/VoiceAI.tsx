@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Mic, MicOff, Volume2, VolumeX } from 'lucide-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { Mic, MicOff, Volume2 } from 'lucide-react';
 
 interface VoiceAIProps {
   className?: string;
@@ -90,7 +90,7 @@ const VoiceAI: React.FC<VoiceAIProps> = ({ className = '' }) => {
         audioContextRef.current.close();
       }
     };
-  }, [voiceState]);
+  }, [voiceState, handleVoiceInput]);
 
   // Audio level monitoring
   const startAudioMonitoring = async () => {
@@ -121,7 +121,7 @@ const VoiceAI: React.FC<VoiceAIProps> = ({ className = '' }) => {
     }
   };
 
-  const handleVoiceInput = async (text: string) => {
+  const handleVoiceInput = useCallback(async (text: string) => {
     setVoiceState('thinking');
     
     try {
@@ -169,9 +169,9 @@ const VoiceAI: React.FC<VoiceAIProps> = ({ className = '' }) => {
       setResponse(errorMessage);
       await speakResponse(errorMessage);
     }
-  };
+  }, [speakResponse]);
 
-  const speakResponse = async (text: string) => {
+  const speakResponse = useCallback(async (text: string) => {
     setVoiceState('speaking');
     
     try {
@@ -223,7 +223,7 @@ const VoiceAI: React.FC<VoiceAIProps> = ({ className = '' }) => {
       console.error('Error with TTS:', error);
       setVoiceState('idle');
     }
-  };
+  }, []);
 
   const toggleVoice = async () => {
     if (!isEnabled) {

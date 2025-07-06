@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MessageSquare } from 'lucide-react';
 
 const DemoAgent = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.innerHTML = `\
+  (function(d,t){
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function(){
+      window.voiceflow.chat.load({
+        verify:{projectID:'6869b71486bd4c6c36457fb7'},
+        url:'https://general-runtime.voiceflow.com',
+        versionID:'production',
+        voice:{url:"https://runtime-api.voiceflow.com"},
+        enablePopover:true
+      });
+    };
+    v.src="https://cdn.voiceflow.com/widget-next/bundle.mjs";
+    v.type="text/javascript";
+    s.parentNode.insertBefore(v,s);
+  })(document,'script');`;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <section id="demo" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -21,12 +45,9 @@ const DemoAgent = () => {
             <div className="relative h-full flex items-center justify-center">
               <div className="text-center">
                 <MessageSquare className="h-16 w-16 text-[#CCCCCC] mx-auto mb-4 opacity-50" />
-                <h3 className="text-2xl font-semibold text-white mb-2">
-                  Voiceflow Agent Embed Coming Soon
-                </h3>
+                <h3 className="text-2xl font-semibold text-white mb-2">Try our Voiceflow Agent</h3>
                 <p className="text-[#CCCCCC] max-w-md mx-auto">
-                  This space will host our interactive AI agent demo where you can experience 
-                  the power of custom AI assistance firsthand.
+                  Click the chat bubble in the corner to start a conversation with our AI agent.
                 </p>
               </div>
             </div>
