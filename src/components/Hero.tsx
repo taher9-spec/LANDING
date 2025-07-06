@@ -1,6 +1,4 @@
-import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
-import VoiceAI from './VoiceAI';
 
 const Hero = () => {
   const scrollToDemo = () => {
@@ -53,9 +51,11 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Live Voice AI Component - Right Side */}
+          {/* Right Side - Placeholder for future content */}
           <div className="relative flex items-center justify-center">
-            <VoiceAI />
+            <div className="w-80 h-80 bg-gradient-to-br from-[#2D2D3A]/30 to-transparent rounded-full border border-[#2D2D3A]/20 backdrop-blur-sm flex items-center justify-center">
+              <span className="text-white/50">Coming Soon</span>
+            </div>
           </div>
         </div>
       </div>

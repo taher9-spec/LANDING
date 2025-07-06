@@ -48,6 +48,112 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.3s ease;
 }
 
+/* Floating Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-15px) translateX(10px);
+  }
+  50% {
+    transform: translateY(5px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(-5px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(10px) translateX(-10px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(10px);
+  }
+  75% {
+    transform: translateY(10px) translateX(5px);
+  }
+}
+
+/* Animation Delays */
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* Custom Pulse Animation for Voice States */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+/* Apply animations */
+.animate-float {
+  animation: float 12s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 15s ease-in-out infinite;
+}
+
+/* Gradient Text */
+.text-gradient {
+  background: linear-gradient(90deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Custom Scrollbar for Response Box */
+.response-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.response-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 3px;
+}
+
+.response-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.response-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom focus styles */
+.focus-ring {
+  @apply ring-2 ring-offset-2 ring-offset-[#0A0A0B] ring-indigo-500/50 focus:outline-none;
+}
+
+/* Smooth transitions */
+.transition-slow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom backdrop blur for better browser compatibility */
+.backdrop-blur-2xl {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
 /* Focus states */
 button:focus,
 input:focus,
